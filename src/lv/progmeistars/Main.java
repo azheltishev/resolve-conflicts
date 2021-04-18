@@ -23,13 +23,25 @@ public class Main {
         for (int i = 0; i < questions; i++) {
             int a = random.nextInt((int) Math.pow(10, answer));
             int b = random.nextInt((int) Math.pow(10, answer));
-            int result = a + b;
 
-            System.out.printf("%d + %d = ", a, b);
-            int userResult = scanner.nextInt();
+            if (random.nextBoolean()) {
+                int result = a + b;
 
-            if (userResult == result) {
-                score++;
+                System.out.printf("%d + %d = ", a, b);
+                int userResult = scanner.nextInt();
+
+                if (userResult == result) {
+                    score++;
+                }
+            } else {
+                int result = a - b;
+
+                System.out.printf("%d - %d = ", a, b);
+                int userResult = scanner.nextInt();
+
+                if (userResult == result) {
+                    score++;
+                }
             }
         }
 

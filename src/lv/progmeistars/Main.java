@@ -24,24 +24,37 @@ public class Main {
             int a = random.nextInt((int) Math.pow(10, answer));
             int b = random.nextInt((int) Math.pow(10, answer));
 
-            if (random.nextBoolean()) {
-                int result = a + b;
+            switch (random.nextInt(3)+1) {
+                case 1:
+                    int result = a + b;
+                    System.out.printf("%d + %d = ", a, b);
+                    int userResult = scanner.nextInt();
 
-                System.out.printf("%d + %d = ", a, b);
-                int userResult = scanner.nextInt();
+                    if (userResult == result) {
+                        score++;
+                    }
+                    break;
+                case 2:
+                    result = a * b;
 
-                if (userResult == result) {
-                    score++;
-                }
-            } else {
-                int result = a - b;
+                    System.out.printf("%d * %d = ", a, b);
+                    userResult = scanner.nextInt();
+
+                    if (userResult == result) {
+                        score++;
+                    }
+                break;
+                case 3:
+                result = a - b;
 
                 System.out.printf("%d - %d = ", a, b);
-                int userResult = scanner.nextInt();
+                    userResult = scanner.nextInt();
 
                 if (userResult == result) {
                     score++;
                 }
+                break;
+                default:
             }
         }
 
